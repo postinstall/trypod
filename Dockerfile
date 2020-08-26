@@ -29,3 +29,4 @@ RUN npm install http-echo-server -g
 
 #CMD ["/usr/bin/sh", "/app/loop.sh"]
 CMD ["/usr/bin/sh", "/app/echoserver_8080.sh"]
+EXPOSE 8080
