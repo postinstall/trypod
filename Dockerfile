@@ -1,5 +1,8 @@
 FROM ubuntu:latest
 
+ENV TZ=Europe/Berlin
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y \
     telnet \
@@ -9,7 +12,14 @@ RUN apt-get install -y \
     vim \
     perl \
     gawk \
-    sed 
+    sed \
+    nodejs \
+    npm \
+    stress \
+    stress-ng \
+    dnsutils \
+    net-tools \
+    traceroute
 
 #RUN yum install -y \
 #                   telnet \
