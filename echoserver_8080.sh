@@ -1,2 +1,2 @@
 #!/bin/bash
-PORT=8080 /usr/bin/http-echo-server
+PORT=8080 /usr/local/bin/http-echo-server
