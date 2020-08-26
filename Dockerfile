@@ -3,14 +3,14 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y \
     telnet \
-    top \
-    du \
+    htop \
+    mc \
     less \
     vim \
     perl \
     gawk \
     sed 
-    
+
 #RUN yum install -y \
 #                   telnet \
 #                   top \
