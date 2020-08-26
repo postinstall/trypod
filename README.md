@@ -1,6 +1,6 @@
 # Trypod 
 
-Dies ist ein kleiner CentOS-Container für allerlei Tests in Openshift/Kubernetes. 
+Dies ist ein kleiner Container für allerlei Tests in Openshift/Kubernetes. 
 
 ## Installierte Tools:
 
