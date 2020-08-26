@@ -21,22 +21,6 @@ RUN apt-get install -y \
     net-tools \
     traceroute
 
-#RUN yum install -y \
-#                   telnet \
-#                   top \
-#                   stress \
-#                   stress-ng \
-#                   wget \
-#                   nmap-ncat \
-#                   npm \
-#                   net-tools \
-#                   less \
-#                   vim \
-#                   perl \
-#                   gawk \
-#                   sed \
-#                   du
-
 WORKDIR /app
 
 ADD loop.sh /app/loop.sh
