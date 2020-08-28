@@ -1,8 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    app: trypod
   name: trypod
+  namespace: trypod
 spec:
+  nodeSelector:
+    "beta.kubernetes.io/os": linux
   replicas: 1
   selector:
     matchLabels:
@@ -12,11 +17,10 @@ spec:
       labels:
         app: trypod
     spec:
-      nodeSelector:
-        "beta.kubernetes.io/os": linux
       containers:
-      - name: trypod
-        image: postinstall/trypod:latest
+      - image: postinstall/trypod:latest
+        imagePullPolicy: Always
+        name: trypod
         resources:
           requests:
             cpu: 100m
@@ -25,5 +29,4 @@ spec:
             cpu: 250m
             memory: 256Mi
         ports:
-        - containerPort: 8080
-          name: trypod
+        - containerPort: 8080          
