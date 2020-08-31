@@ -6,8 +6,6 @@ metadata:
   name: trypod
   namespace: trypod
 spec:
-  nodeSelector:
-    "beta.kubernetes.io/os": linux
   replicas: 1
   selector:
     matchLabels:
