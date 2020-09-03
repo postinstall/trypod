@@ -1,0 +1,22 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: trypod
+  namespace: trypod
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt
+spec:
+  tls:
+  - hosts:
+    - trypod.k8spoc01.gfi.ihk.de
+    secretName: tls-secret
+  rules:
+  - host: trypod.k8spoc01.gfi.ihk.de
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: trypod
+          servicePort: 80
