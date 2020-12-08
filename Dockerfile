@@ -3,8 +3,9 @@ FROM ubuntu:latest
 ENV TZ=Europe/Berlin
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y \
+RUN apt-get update \
+&& apt-get upgrade -y \
+&& apt-get install -y \
     telnet \
     htop \
     mc \
@@ -19,7 +20,10 @@ RUN apt-get install -y \
     stress-ng \
     dnsutils \
     net-tools \
-    traceroute
+    traceroute \
+    wget \
+    curl \
+    iputils-ping
 
 WORKDIR /app
 
